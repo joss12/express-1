@@ -1,0 +1,282 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width='device-width', initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        body {
+            /* margin:2rem; */
+            /* background-color: black; */
+            background-color: #394867;
+            justify-content: center;
+            margin: auto;
+            text-align: center;
+            color: white;
+            font-size: 24;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    
+        td {
+            border: 1px solid white;
+            margin: auto;
+            padding: 1rem;
+        }
+    
+        a:visited, a {
+            color: violet;
+        }
+    </style>
+    <h1>
+        API Method Listing
+    </h1>
+    
+    <h2>
+        Public Methods
+    </h2>
+    
+    <div>
+        <a href="/products/detail/1234"><h3><code>GET products/detail/:SKU</code></h3></a>
+        <p>
+            Returns detailed information regarding the product with the specified SKU.
+        </p>
+    </div>
+    
+    
+    <div>
+        <a href="/products/search?color=Blue,Black"><h3><code>GET products/search[?criteria1=a&criteria2=b]</code></h3></a>
+        <p>
+            Return an array of products matching the provided criteria.
+        </p>
+    </div>
+    
+    
+    <div>
+        <a href="products/options/brand"><h3><code>GET products/options/:property</code></h3></a>
+        <p>
+    
+            Returns all the possible listing options for a particular property, i.e., brand.
+    
+        </p>
+    </div>
+    
+    <h2>Secure Methods</h2>
+    
+    <div>
+        <a href=""><h3><code>POST products/adjust/quantity</code></h3></a>
+        <p>
+    
+            Adjust the remaining quantity of items available. Use when a sale has been made.
+    
+        </p>
+    
+        <h4>
+            POST Parameters
+        </h4>
+    
+        <table>
+            <thead>
+                <td>
+                    Parameter Name
+                </td>
+                <td>
+                    Description
+                </td>
+                <td>
+                    Example
+                </td>
+            </thead>
+            <tr>
+                <td>
+                    token
+                </td>
+                <td>
+                    Your secure token
+                </td>
+                <td>
+                    "1234-5678"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    SKU
+                </td>
+                <td>
+                    The SKU (Stock Keeping Unit) of the product you want to modify
+                </td>
+                <td>
+                    "abcd-efgh"
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    count
+                </td>
+                <td>
+                    The amount to adjust the product count by.
+                </td>
+                <td>
+                    -2
+                </td>
+            </tr>
+        </table>
+    </div>
+    
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        body{
+            background-color: #394867;
+            justify-content: center;
+            margin: auto;
+            text-align: center;
+            font-size: 24;
+            color:white;
+            font-family: 'Courier New', Courier, monospace;
+        }
+
+        table{
+            justify-content: center;
+        }
+
+        td{
+            border: 1px solid gainsboro;
+            padding:1rem;
+        }
+
+        h1, h2, h2{
+            color: #F15A59;
+        }
+    </style>
+
+    <h1>
+        API
+    </h1>
+
+    <h2>Public Method</h2>
+
+    <div class="container">
+        <div>
+            <a href="/products/detail/1">
+                <h3><code>GET products/details/:SKU</code></h3>
+            </a>
+            <p>
+                Returns info about the SKU
+            </p>
+        </div>
+
+        <div>
+            <a href="/products/search?color=Black,Blue">
+                <h3><code>GET products/search[?property=value&property2=value2]</code></h3>
+            </a>
+            <p>
+                Returns array of products matching search criteria
+            </p>
+            <p>
+                TODO - document possible key values 
+            </p>
+        </div>
+
+
+        <div>
+            <a href="/products/options/brand">
+                <h3><code>GET products/options/:property</code></h3>
+            </a>
+            <p>
+                Returns all possible value for a fielld
+            </p>
+        </div>
+
+        <h2>
+            Secure Method
+        </h2>
+
+        <div>
+            <a >
+                <h3><code>GET products/adjust/quantity</code></h3>
+            </a>
+            <p>
+               Adjusts how many items remain.
+            </p>
+
+            <h4>
+                POST Parameters
+            </h4>
+            <table>
+                <thead>
+                    <td>
+                        Parameter Name:
+                    </td>
+
+                    <td>
+                        Desscription
+                    </td>
+
+                    <td>
+                        Example
+                    </td>
+
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            token
+                        </td>
+                        <td>
+                            Your provider auth token
+                        </td>
+                        <td>
+                            "123-abcd"
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            SKU
+                        </td>
+                        <td>
+                            The sku of the product to be modified
+                        </td>
+                        <td>
+                            4
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            count
+                        </td>
+                        <td>
+                            How many utils to add or remove
+                        </td>
+                        <td>
+                            2
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    
+</body>
+</html>
